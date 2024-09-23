@@ -19,7 +19,9 @@ const router = createBrowserRouter([
     path: "enigme/:enigmeId",
     element: <Enigme />,
   },
-]);
+], {
+  basename: import.meta.env.BASE_URL,
+});
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
