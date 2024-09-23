@@ -27,7 +27,7 @@ export default function Enigme() {
   }
 
   return (
-    <div> 
+    <div style={{paddingBottom: 48, paddingLeft: 24, paddingRight: 24, overflow: "scroll", width: "100%"}}> 
       {
         password && !isUnlocked ? (
           <PasswordLocked password={password} onPasswordSuccessful={onPasswordSuccessful} />
