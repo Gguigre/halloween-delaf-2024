@@ -1,20 +1,21 @@
 import PropTypes from 'prop-types';
 import { useState } from 'react';
+import { sanitize } from '../../domain/solve/sanitize';
 
 Solve.propTypes = {
     text: PropTypes.string.isRequired,
-    hashedSolution: PropTypes.string.isRequired,
+    solutions: PropTypes.arrayOf(PropTypes.string).isRequired,
     onEnigmeSolved: PropTypes.func.isRequired
 };
 
-export default function Solve({text, hashedSolution, onEnigmeSolved}) {
+export default function Solve({text, solutions, onEnigmeSolved}) {
 
     const [isError, setIsError] = useState(false);
 
     const handleSolutionSubmit = (e) => {
         e.preventDefault();
-        const solution = e.target.elements.solution.value;
-        if (hashedSolution === solution) {
+        const input = e.target.elements.solution.value;
+        if (solutions.some(solution => sanitize(solution) === sanitize(input)) ) {
             onEnigmeSolved(true);
         } else {
             setIsError(true);

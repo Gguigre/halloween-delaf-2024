@@ -13,7 +13,7 @@ const useEnigme = (enigmeId) => {
 export default function Enigme() {
 
   const { enigmeId } = useParams();
-  const {password, text, solution, successText} = useEnigme(enigmeId);
+  const {password, text, solutions, successText} = useEnigme(enigmeId);
   const {password: nextPassword} = useEnigme(Number(enigmeId)+1);
   const [isSolved, setIsSolved] = useState(false);
   const [isUnlocked, setIsUnlocked] = useState(false);
@@ -35,7 +35,7 @@ export default function Enigme() {
           isSolved ? (
             <Success successText={successText} nextPassword={nextPassword} />
           ) : (
-            <Solve text={text} hashedSolution={solution} onEnigmeSolved={onEnigmeSolved} />
+            <Solve text={text} solutions={solutions} onEnigmeSolved={onEnigmeSolved} />
           )
       }
     </div>
