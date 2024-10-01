@@ -4,11 +4,12 @@ import { sanitize } from '../../domain/solve/sanitize';
 
 Solve.propTypes = {
     text: PropTypes.string.isRequired,
+    imageName: PropTypes.string.isRequired,
     solutions: PropTypes.arrayOf(PropTypes.string).isRequired,
     onEnigmeSolved: PropTypes.func.isRequired
 };
 
-export default function Solve({text, solutions, onEnigmeSolved}) {
+export default function Solve({text, solutions, onEnigmeSolved, imageName}) {
 
     const [isError, setIsError] = useState(false);
 
@@ -24,6 +25,7 @@ export default function Solve({text, solutions, onEnigmeSolved}) {
 
     return (<div>
         <h1>{text}</h1>
+        <img src={`${import.meta.env.BASE_URL}assets/${imageName}.png`} style={{width:"100%"}}/>
         <p>Entrez la solution pour continuer</p>
         {isError ? <p><strong>Oops, ce n&apos;est pas la bonne solution.<br />Retente ta chance !</strong></p> : null}
         <form onSubmit={handleSolutionSubmit}>

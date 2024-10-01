@@ -2,6 +2,7 @@ export const enigmes = {
   1: {
     password: null,
     text: "Enigme 1",
+    imageName: "c5ad6bff-83f8-46d8-b227-83832d3f0c5a",
     solutions: ["Aidez-moi"],
     successText: "<Localisation de l'énigme 2>",
   },
