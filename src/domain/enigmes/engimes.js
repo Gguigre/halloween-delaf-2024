@@ -1,17 +1,19 @@
 export const enigmes = {
   1: {
     password: null,
-    text: "Enigme 1",
+    text: "Devant vous, une flaque de sang fraîchement versée. Une personne à tracé des lettres dedans. Mais cela n’a aucun sens. Est-ce que la perte de sang lui a fait complètement perdre la tête?",
     imageName: "c5ad6bff-83f8-46d8-b227-83832d3f0c5a",
     solutions: ["Aidez-moi"],
-    successText: "<Localisation de l'énigme 2>",
+    successText:
+      "En prenant un peu de recul, vous vous rendez compte que de toutes petites tâches de sang s'éloignent de la flaque et vont jusque à côté de la machine à PH du 1er étage.",
   },
   2: {
     password: "488",
-    text: "Enigme 2",
+    text: "Près de la machine vous trouverez un grimoire plein de formules et de textes qui n'ont ni queue ni sens. Mais une page vous interpelle. Elle paraît plus claire que les autres sans pour autant l’être. Le poème vous semble étrange. Comme s’il cachait une autre signification.",
     imageName: "81490372-bf9d-45be-b817-295d722c08ab",
     solutions: ["Terminal"],
-    successText: "<Localisation de l'énigme 3>",
+    successText:
+      "Terminal? Qu’est ce que cela veut bien vouloir dire? …. Vous continuez de feuilleter le grimoire et vous vous rendez compte que la dernière page à été arrachée!  La page terminale du grimoire ! Elle a dû être volée! Vous devez absolument la retrouver! Vous fouillez alors frénétiquement toute la maternité pour la retrouver. Vous cherchez tous les étages un à un en finissant par le dernier. Mais vous ne trouvez rien… désespéré et surtout déshydraté vous décidez d’aller boire un grand verre d’eau juste à côté de la ou vous avez arrêté vos recherches. Vos yeux qui divaguaient dans le vide tombent sur un petit bout de papier au sol juste à côté du frigo. Vous vous approchez et vous rendez compte que c’est la page manquant du carnet!",
   },
   3: {
     password: "923",
