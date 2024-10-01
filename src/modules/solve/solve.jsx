@@ -24,13 +24,16 @@ export default function Solve({text, solutions, onEnigmeSolved, imageName}) {
     }
 
     return (<div>
-        <h1>{text}</h1>
-        <img src={`${import.meta.env.BASE_URL}assets/${imageName}.png`} style={{width:"100%"}}/>
-        <p>Entrez la solution pour continuer</p>
-        {isError ? <p><strong>Oops, ce n&apos;est pas la bonne solution.<br />Retente ta chance !</strong></p> : null}
-        <form onSubmit={handleSolutionSubmit}>
-        <input type="text" name="solution"/>
-        <button>Valider</button>
+        <p>{text}</p>
+        {solutions.length > 0 && <>
+            <img src={`${import.meta.env.BASE_URL}assets/${imageName}.png`} style={{width:"100%"}}/>
+            <p>Entrez la solution pour continuer</p>
+            {isError ? <p><strong>Oops, ce n&apos;est pas la bonne solution.<br />Retente ta chance !</strong></p> : null}
+            <form onSubmit={handleSolutionSubmit}>
+            <input type="text" name="solution"/>
+            <button>Valider</button>
         </form>
+        </>
+        }
       </div>)
 }
