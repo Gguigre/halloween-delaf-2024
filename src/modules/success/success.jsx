@@ -8,7 +8,7 @@ Success.propTypes = {
 export default function Success ({successText, nextPassword}) {
     return (<div>
         <h1>Bravo!</h1>
-        <p>{successText}</p>
+        <div dangerouslySetInnerHTML={{__html: successText}} />
         <p>Pour y accéder, vous aurez besoin du mot de passe : {nextPassword}</p>
       </div>)
 }

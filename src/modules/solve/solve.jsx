@@ -24,7 +24,7 @@ export default function Solve({text, solutions, onEnigmeSolved, imageName}) {
     }
 
     return (<div>
-        <p>{text}</p>
+        <div dangerouslySetInnerHTML={{__html: text}} />
         {solutions.length > 0 && <>
             <img src={`${import.meta.env.BASE_URL}assets/${imageName}.png`} style={{width:"100%"}}/>
             <p>Entrez la solution pour continuer</p>
