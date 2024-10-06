@@ -60,26 +60,34 @@ form[action$="destroy"] button {
   color: #f44250;
 }
 
-#root {
-  display: flex;
-  height: 100%;
-  width: 100%;
-}
-
 @font-face{
   font-family: "Chapbook";
   src:local("Chapbook.regular"),
   url('./assets/fonts/chapbook.regular.otf') format('opentype');
 }
 
+body, html {
+  height: 100%;
+}
+
+#root {
+  height: 100%;
+}
+
 .page {
   padding-bottom: 48px;
   padding-left: 24px;
   padding-right: 24px;
-  overflow: scroll;
-  width: 100%;
-  background-image: url('./assets/background.png');
-  background-size: cover;
   color: white;
-  font-family: "Chapbook" 
+  font-family: "Chapbook";
+  overflow: scroll;
+
+  background-image: url('./assets/background.png');
+  /* Full height */
+  height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
