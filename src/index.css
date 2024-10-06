@@ -65,3 +65,21 @@ form[action$="destroy"] button {
   height: 100%;
   width: 100%;
 }
+
+@font-face{
+  font-family: "Chapbook";
+  src:local("Chapbook.regular"),
+  url('./assets/fonts/chapbook.regular.otf') format('opentype');
+}
+
+.page {
+  padding-bottom: 48px;
+  padding-left: 24px;
+  padding-right: 24px;
+  overflow: scroll;
+  width: 100%;
+  background-image: url('./assets/background.png');
+  background-size: cover;
+  color: white;
+  font-family: "Chapbook" 
+}
