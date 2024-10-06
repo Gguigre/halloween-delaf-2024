@@ -26,7 +26,7 @@ export default function PasswordLocked ({password, onPasswordSuccessful}) {
         {isError ? <p><strong>Oops, ce n&apos;est pas le bon mot de passe.<br />Retente ta chance !</strong></p> : <p>Entrez le mot de passe pour continuer</p>}
         
         <form onSubmit={handlePasswordSubmit}>
-        <input type="password" name="password" />
+        <input type="password" name="password" style={{marginRight: 16, marginBottom: 16}} />
         <button>Valider</button>
         </form>
       </div>)
