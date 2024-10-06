@@ -1,7 +1,7 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom/client";
 import {
-  createBrowserRouter,
+  createHashRouter,
   RouterProvider
 } from "react-router-dom";
 import ErrorPage from "./error-page";
@@ -9,7 +9,7 @@ import "./index.css";
 import Enigme from "./routes/enigme";
 import Root from "./routes/root";
 
-const router = createBrowserRouter([
+const router = createHashRouter([
   {
     path: "/",
     element: <Root />,
@@ -19,9 +19,7 @@ const router = createBrowserRouter([
     path: "enigme/:enigmeId",
     element: <Enigme />,
   },
-], {
-  basename: import.meta.env.BASE_URL,
-});
+]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
