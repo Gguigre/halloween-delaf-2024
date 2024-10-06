@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import backgroundImage from "../assets/background.png";
 
 export default function Root() {
 
@@ -8,7 +9,7 @@ export default function Root() {
   }
 
   return (
-    <div style={{paddingBottom: 48, paddingLeft: 24, paddingRight: 24, overflow: "scroll", width: "100%"}}>
+    <div style={{paddingBottom: 48, paddingLeft: 24, paddingRight: 24, overflow: "scroll", width: "100%", backgroundImage: `url(${backgroundImage})`, backgroundSize: "cover", color: "white" }}>
       <h1>L&apos;enquête d&apos;Angélique</h1>
       <p>Je suis Ang&eacute;lique du Coudray, ma&icirc;tresse des accouchements et gardienne de ces lieux. Depuis des si&egrave;cles, je veille sur cette maternit&eacute;, o&ugrave; tant de vies ont vu le jour. Mais aujourd&apos;hui, une force obscure s&apos;est empar&eacute;e de l&apos;h&ocirc;pital. Dans les recoins les plus sombres de ce b&acirc;timent, une pr&eacute;sence terrifiante s&rsquo;est &eacute;veill&eacute;e&#8230; un monstre qui enl&egrave;ve nos sages-femmes, les emportant loin de nous.<br /></p>
       <p>Je ressens sa pr&eacute;sence grandir dans l&apos;ombre, mais je suis impuissante &agrave; l&apos;arr&ecirc;ter seule. C&apos;est pourquoi j&apos;ai besoin de vous, enqu&ecirc;teurs courageux. Vous devrez m&apos;aider &agrave; retrouver celles qui ont disparu et &agrave; mettre fin &agrave; cette terreur qui hante notre maternit&eacute;.<br /></p>

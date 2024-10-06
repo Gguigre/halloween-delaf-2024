@@ -4,6 +4,7 @@ import PasswordLocked from "../modules/password/passwordLocked";
 import Solve from "../modules/solve/solve";
 import Success from "../modules/success/success";
 import { enigmes } from "../domain/enigmes/engimes";
+import backgroundImage from "../assets/background.png";
 
 const useEnigme = (enigmeId) => {
   const allEnigmes = enigmes;
@@ -27,7 +28,7 @@ export default function Enigme() {
   }
 
   return (
-    <div style={{paddingBottom: 48, paddingLeft: 24, paddingRight: 24, overflow: "scroll", width: "100%"}}> 
+    <div style={{paddingBottom: 48, paddingLeft: 24, paddingRight: 24, overflow: "scroll", width: "100%", backgroundImage: `url(${backgroundImage})`, backgroundSize: "cover", color: "white"}}> 
       {
         password && !isUnlocked ? (
           <PasswordLocked password={password} onPasswordSuccessful={onPasswordSuccessful} />
