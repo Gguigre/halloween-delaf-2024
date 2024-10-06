@@ -10,11 +10,12 @@ export default function Root() {
   return (
     <div style={{paddingBottom: 48, paddingLeft: 24, paddingRight: 24, overflow: "scroll", width: "100%"}}>
       <h1>L&apos;enquête d&apos;Angélique</h1>
-      <p>Je suis Angélique du Coudray, maîtresse des accouchements et gardienne de ces lieux. Depuis des siècles, je veille sur cette maternité, où de nombreuses vies ont vu le jour. Mais aujourd&apos;hui, un sombre mal s’est emparé de l’hôpital. Dans les recoins les plus obscurs de ce bâtiment, quelque chose de terrifiant s’est éveillé… un monstre qui kidnappe nos sages-femmes, les emportant loin de nous.</p>
-      <p>Je sens sa présence grandir dans l’ombre, mais je suis impuissante à l&apos;arrêter seule. C’est pourquoi j&apos;ai besoin de vous, enquêteurs courageux. Vous devrez me prêter main forte pour retrouver celles qui ont disparu et mettre fin à cette terreur qui hante notre maternité.</p>
-      <p>Le monstre laisse des indices derrière lui, dispersés à travers les lieux que vous connaissez bien. Chaque énigme résolue vous rapprochera de la vérité. Il vous faudra parcourir la maternité, suivre les pistes, et affronter les secrets cachés dans l’obscurité pour le débusquer.</p>
-      <p>Vous avez neuf énigmes à résoudre avant que tout ne vous soit révélé. Chaque énigme vous donnera un mot de passe et la localisation du prochain indice.</p>
-      <p><strong>Ne perdez pas de temps. Le monstre est encore là, tapi dans les coins les plus sombres de l’hôpital… Saurez-vous lever le voile sur ce mystère avant qu’il ne soit trop tard ?</strong></p>
+      <p>Je suis Ang&eacute;lique du Coudray, ma&icirc;tresse des accouchements et gardienne de ces lieux. Depuis des si&egrave;cles, je veille sur cette maternit&eacute;, o&ugrave; tant de vies ont vu le jour. Mais aujourd&apos;hui, une force obscure s&apos;est empar&eacute;e de l&apos;h&ocirc;pital. Dans les recoins les plus sombres de ce b&acirc;timent, une pr&eacute;sence terrifiante s&rsquo;est &eacute;veill&eacute;e&#8230; un monstre qui enl&egrave;ve nos sages-femmes, les emportant loin de nous.<br />
+Je ressens sa pr&eacute;sence grandir dans l&apos;ombre, mais je suis impuissante &agrave; l&apos;arr&ecirc;ter seule. C&apos;est pourquoi j&apos;ai besoin de vous, enqu&ecirc;teurs courageux. Vous devrez m&apos;aider &agrave; retrouver celles qui ont disparu et &agrave; mettre fin &agrave; cette terreur qui hante notre maternit&eacute;.<br />
+Le monstre laisse des indices derri&egrave;re lui, dispers&eacute;s dans des lieux qui vous sont familiers. Chaque &eacute;nigme r&eacute;solue vous rapprochera de la v&eacute;rit&eacute;. Vous devrez explorer la maternit&eacute;, suivre les pistes, et affronter les secrets tapis dans l&apos;obscurit&eacute; pour d&eacute;masquer ce mal.<br />
+Vous avez neuf &eacute;nigmes &agrave; r&eacute;soudre avant que la v&eacute;rit&eacute; ne vous soit r&eacute;v&eacute;l&eacute;e. Chaque &eacute;nigme vous fournira un mot de passe ainsi que l&apos;emplacement du prochain indice.<br />
+Ne perdez pas de temps. Le monstre r&ocirc;de encore, cach&eacute; dans les coins les plus sombres de l&rsquo;h&ocirc;pital&#8230; Parviendrez-vous &agrave; lever le voile sur ce myst&egrave;re avant qu&apos;il ne soit trop tard ?<br />
+</p>
       <button onClick={onStartPress} >Commencer l&apos;enquête</button>
     </div>
   );
