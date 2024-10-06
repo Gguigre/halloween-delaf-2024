@@ -1,10 +1,9 @@
 import { useState } from "react";
 import { useParams } from "react-router-dom";
+import { enigmes } from "../domain/enigmes/engimes";
 import PasswordLocked from "../modules/password/passwordLocked";
 import Solve from "../modules/solve/solve";
 import Success from "../modules/success/success";
-import { enigmes } from "../domain/enigmes/engimes";
-import backgroundImage from "../assets/background.png";
 
 const useEnigme = (enigmeId) => {
   const allEnigmes = enigmes;
