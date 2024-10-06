@@ -1,20 +1,17 @@
 import { useState } from "react";
 import { useParams } from "react-router-dom";
-import { enigmes } from "../domain/enigmes/engimes";
+
 import PasswordLocked from "../modules/password/passwordLocked";
 import Solve from "../modules/solve/solve";
 import Success from "../modules/success/success";
+import { useEnigme } from "../modules/enigma/useEnigme";
 
-const useEnigme = (enigmeId) => {
-  const allEnigmes = enigmes;
-  return allEnigmes[enigmeId]
-}
+
 
 export default function Enigme() {
 
   const { enigmeId } = useParams();
-  const {password, text, imageName, solutions, successText} = useEnigme(enigmeId);
-  const {password: nextPassword} = useEnigme(Number(enigmeId)+1);
+  const {password} = useEnigme(enigmeId);
   const [isSolved, setIsSolved] = useState(false);
   const [isUnlocked, setIsUnlocked] = useState(false);
 
@@ -30,12 +27,12 @@ export default function Enigme() {
     <div className="page" >
       {
         password && !isUnlocked ? (
-          <PasswordLocked password={password} onPasswordSuccessful={onPasswordSuccessful} />
+          <PasswordLocked enigmeId={enigmeId} onPasswordSuccessful={onPasswordSuccessful} />
         ) : 
           isSolved ? (
-            <Success successText={successText} nextPassword={nextPassword} />
+            <Success enigmeId={enigmeId} />
           ) : (
-            <Solve text={text} solutions={solutions} onEnigmeSolved={onEnigmeSolved} imageName={imageName} />
+            <Solve onEnigmeSolved={onEnigmeSolved} enigmeId={enigmeId} />
           )
       }
     </div>

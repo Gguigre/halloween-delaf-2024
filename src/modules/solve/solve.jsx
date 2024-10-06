@@ -1,15 +1,16 @@
 import PropTypes from 'prop-types';
 import { useState } from 'react';
 import { sanitize } from '../../domain/solve/sanitize';
+import { useEnigme } from '../enigma/useEnigme';
 
 Solve.propTypes = {
-    text: PropTypes.string.isRequired,
-    imageName: PropTypes.string.isRequired,
-    solutions: PropTypes.arrayOf(PropTypes.string).isRequired,
+    enigmeId: PropTypes.string.isRequired,
     onEnigmeSolved: PropTypes.func.isRequired
 };
 
-export default function Solve({text, solutions, onEnigmeSolved, imageName}) {
+export default function Solve({enigmeId, onEnigmeSolved}) {
+
+    const {text, imageName, solutions} = useEnigme(enigmeId);
 
     const [isError, setIsError] = useState(false);
 

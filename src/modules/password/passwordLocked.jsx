@@ -1,12 +1,15 @@
 import PropTypes from 'prop-types';
 import { useState } from 'react';
+import { useEnigme } from '../enigma/useEnigme';
 
 PasswordLocked.propTypes = {
-    password: PropTypes.string.isRequired,
+    enigmeId: PropTypes.string.isRequired,
     onPasswordSuccessful: PropTypes.func.isRequired
 };
 
-export default function PasswordLocked ({password, onPasswordSuccessful}) {
+export default function PasswordLocked ({enigmeId, onPasswordSuccessful}) {
+
+  const {password } = useEnigme(enigmeId);
 
     const [isError, setIsError] = useState(false);
 

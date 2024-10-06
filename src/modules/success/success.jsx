@@ -1,11 +1,15 @@
 import PropTypes from 'prop-types';
+import { useEnigme } from '../enigma/useEnigme';
 
 Success.propTypes = {
-    successText: PropTypes.string.isRequired,
-    nextPassword: PropTypes.string.isRequired
+    enigmeId: PropTypes.string.isRequired,
 }
 
-export default function Success ({successText, nextPassword}) {
+export default function Success ({enigmeId}) {
+
+    const {successText} = useEnigme(enigmeId);
+    const {password: nextPassword} = useEnigme(Number(enigmeId)+1);
+
     return (<div>
         <h1>Bravo!</h1>
         <div dangerouslySetInnerHTML={{__html: successText}} />
