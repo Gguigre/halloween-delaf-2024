@@ -5,6 +5,8 @@ import PasswordLocked from "../modules/password/passwordLocked";
 import Solve from "../modules/solve/solve";
 import Success from "../modules/success/success";
 import { useEnigme } from "../modules/enigma/useEnigme";
+import { analytics } from '../firebase-config';
+import { logEvent } from 'firebase/analytics';
 
 
 
@@ -16,10 +18,16 @@ export default function Enigme() {
   const [isUnlocked, setIsUnlocked] = useState(false);
 
   const onPasswordSuccessful = () => {
+    logEvent(analytics, 'unlocked', {
+      enigma_id: enigmeId,
+    });
     setIsUnlocked(true);
   }
 
   const onEnigmeSolved = () => {
+    logEvent(analytics, 'solved', {
+      enigma_id: enigmeId,
+    });
     setIsSolved(true);
   }
 
