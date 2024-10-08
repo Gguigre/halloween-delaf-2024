@@ -2,6 +2,8 @@ import PropTypes from 'prop-types';
 import { useState } from 'react';
 import { sanitize } from '../../domain/solve/sanitize';
 import { useEnigme } from '../enigma/useEnigme';
+import { analytics } from '../../firebase-config';
+import { logEvent } from 'firebase/analytics';
 
 Solve.propTypes = {
     enigmeId: PropTypes.string.isRequired,
@@ -20,6 +22,11 @@ export default function Solve({enigmeId, onEnigmeSolved}) {
         if (solutions.some(solution => sanitize(solution) === sanitize(input)) ) {
             onEnigmeSolved(true);
         } else {
+            logEvent(analytics, 'wrong_answer', {
+                enigma_id: enigmeId,
+                answer: input,
+                expected: solutions.join(' OR ')
+              });
             setIsError(true);
         }
     }
