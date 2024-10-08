@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
 import PasswordLocked from "../modules/password/passwordLocked";
@@ -16,6 +16,11 @@ export default function Enigme() {
   const {password} = useEnigme(enigmeId);
   const [isSolved, setIsSolved] = useState(false);
   const [isUnlocked, setIsUnlocked] = useState(false);
+
+  useEffect(() => {
+    setIsSolved(false);
+    setIsUnlocked(false);
+  }, [enigmeId]);
 
   const onPasswordSuccessful = () => {
     logEvent(analytics, 'unlocked', {
