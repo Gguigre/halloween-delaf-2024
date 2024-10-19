@@ -41,7 +41,9 @@ export default function Solve({enigmeId, onEnigmeSolved}) {
             <p>Entrez la solution pour continuer</p>
             {isError ? <p><strong>Oops, ce n&apos;est pas la bonne solution.<br />Retente ta chance !</strong></p> : null}
             <form onSubmit={handleSolutionSubmit}>
-            <input style={{marginRight: 16, marginBottom: 16}} type="text" name="solution"/>
+            <input style={{marginRight: 16, marginBottom: 16}} type="text" name="solution" onChange={() => {
+                setIsError(false);
+            }}/>
             <button>Valider</button>
         </form>
         </>
