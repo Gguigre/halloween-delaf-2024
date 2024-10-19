@@ -19,6 +19,9 @@ export default function Solve({enigmeId, onEnigmeSolved}) {
     const handleSolutionSubmit = (e) => {
         e.preventDefault();
         const input = e.target.elements.solution.value;
+        if (input === '') {
+                return;
+        }
         if (solutions.some(solution => sanitize(solution) === sanitize(input)) ) {
             onEnigmeSolved(true);
         } else {
